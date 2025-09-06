@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Street Racer — HTML5 Canvas Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">Street Racer</div>
+      <div class="hud">
+        <div>Score: <span id="score">0</span></div>
+        <div>High: <span id="highScore">0</span></div>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <canvas id="gameCanvas" aria-label="Car racing game"></canvas>
+
+      <div class="controls">
+        <button id="btnLeft" class="ctl">◀</button>
+        <button id="btnPause" class="ctl pause">Pause</button>
+        <button id="btnRight" class="ctl">▶</button>
+      </div>
+
+      <div class="overlay" id="overlay">
+        <div class="menu">
+          <h1>Street Racer</h1>
+          <p id="msg">Use ← → keys or buttons to steer. Avoid the traffic!</p>
+          <div class="menu-row">
+            <button id="startBtn" class="primary">Start</button>
+            <button id="resumeBtn" class="primary" style="display:none">Resume</button>
+            <button id="restartBtn" class="secondary">Restart</button>
+          </div>
+          <div class="small">Mobile: tap arrows or swipe. Built with HTML/CSS/JS.</div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="small">Arrow keys / A,D to steer · Space to brake · R to restart</div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
