@@ -1,0 +1,41 @@
+:root{
+  --bg:#071126;
+  --panel:#0b1a2a;
+  --accent:#ff6b6b;
+  --accent2:#ffd166;
+  --muted:#9fb0c8;
+  --glass: rgba(255,255,255,0.03);
+  --radius:12px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Arial; background:linear-gradient(180deg,var(--bg),#031021); color:#eaf3ff}
+.app{max-width:1100px; margin:18px auto; padding:12px; display:flex; flex-direction:column; gap:12px}
+.topbar{display:flex; align-items:center; justify-content:space-between; padding:10px 14px; background:var(--panel); border-radius:12px; border:1px solid rgba(255,255,255,0.03)}
+.brand{font-weight:800; letter-spacing:.06em}
+.hud{display:flex; gap:16px; color:var(--muted)}
+
+.game-area{position:relative; display:flex; flex-direction:column; align-items:center; gap:12px}
+/* canvas responsive */
+#gameCanvas{width:100%; max-width:900px; height:calc(56vw + 80px); max-height:720px; background:linear-gradient(180deg,#243b1f,#102016); border-radius:12px; display:block; box-shadow: 0 12px 40px rgba(0,0,0,.6); border:1px solid rgba(255,255,255,.03)}
+
+.controls{display:flex; gap:10px; align-items:center; justify-content:center; margin-top:8px}
+.ctl{background:var(--glass); color:var(--muted); border:1px solid rgba(255,255,255,.04); padding:12px 18px; border-radius:10px; font-size:20px; cursor:pointer; user-select:none}
+.ctl.pause{background:linear-gradient(90deg,var(--accent),var(--accent2)); color:#081019; font-weight:700}
+
+.overlay{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none}
+.menu{pointer-events:auto; background:linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.2)); border-radius:14px; padding:22px; text-align:center; border:1px solid rgba(255,255,255,0.04)}
+.menu h1{margin:0; font-size:28px; letter-spacing:.06em}
+.menu p{color:var(--muted); margin:8px 0 12px}
+.menu-row{display:flex; gap:10px; justify-content:center; margin-top:12px}
+.primary{background:linear-gradient(90deg,var(--accent),var(--accent2)); border:none; padding:10px 16px; border-radius:10px; font-weight:800; color:#081019; cursor:pointer}
+.secondary{background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted); padding:10px 14px; border-radius:10px; cursor:pointer}
+
+.footer{display:flex; justify-content:center; color:var(--muted); font-size:13px}
+
+/* responsive */
+@media (max-width:720px){
+  #gameCanvas{height:66vh}
+  .menu h1{font-size:22px}
+  .ctl{padding:10px 12px}
+}
